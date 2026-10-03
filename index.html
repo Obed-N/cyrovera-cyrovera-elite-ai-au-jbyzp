@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYROVERA | Elite AI Automation for Boss Obed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-blue-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tighter text-blue-500">CYROVERA</div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#services" class="hover:text-white transition">Services</a>
+                <a href="#results" class="hover:text-white transition">Results</a>
+                <a href="#" onclick="toggleModal()" class="px-5 py-2 bg-white text-black rounded-full hover:bg-blue-500 hover:text-white transition">Get Access</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu()"><i data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 max-w-4xl mx-auto leading-tight">
+            We Build AI Systems That <span class="text-blue-500">Actually Make Money</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+            Stop wasting time on manual tasks. We deploy custom automation agents that handle your sales, support, and lead qualification while you sleep.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <button onclick="toggleModal()" class="px-8 py-4 bg-blue-600 rounded-lg font-bold hover:bg-blue-700 transition">Start Your Automation</button>
+            <a href="#services" class="px-8 py-4 border border-slate-700 rounded-lg font-bold hover:bg-slate-900 transition">See How It Works</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-8 rounded-2xl">
+                <i data-lucide="bot" class="text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Automated Sales</h3>
+                <p class="text-slate-400 text-sm">Your AI agent qualifies every lead that hits your inbox, books meetings, and handles objections instantly.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <i data-lucide="zap" class="text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Workflow Speed</h3>
+                <p class="text-slate-400 text-sm">Connect your apps. We link your CRM, email, and payment processors so data moves without you lifting a finger.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <i data-lucide="bar-chart-3" class="text-blue-500 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Data Insights</h3>
+                <p class="text-slate-400 text-sm">Real-time dashboards that show exactly where your money is coming from and where you're leaking profit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="contactModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm">
+        <div class="bg-slate-900 border border-slate-700 p-8 rounded-2xl w-full max-w-md relative">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-slate-400"><i data-lucide="x"></i></button>
+            <h2 class="text-2xl font-bold mb-6">Talk to Boss Obed</h2>
+            <form id="contactForm" class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full bg-slate-800 p-3 rounded-lg border border-slate-700 focus:outline-none focus:border-blue-500">
+                <input type="email" placeholder="Email Address" class="w-full bg-slate-800 p-3 rounded-lg border border-slate-700 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="w-full bg-blue-600 py-3 rounded-lg font-bold">Request Audit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-10 text-center text-slate-600 text-sm">
+        &copy; 2024 CYROVERA. Built by Brian. All rights reserved.
+    </footer>
+
+    <script>
+        // Lucide Icons Init
+        lucide.createIcons();
+
+        // Modal Logic
+        function toggleModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Application received. We'll be in touch shortly.");
+            toggleModal();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            alert("Menu functionality active. Navigation links available above.");
+        }
+    </script>
+</body>
+</html>
